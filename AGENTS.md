@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Product catalog is read from the `products` table (only `is_active = true`, ordered by `display_order`) via a public server function; toggling rows in the database changes the site without code edits.
+- Product `image_url` values point to files in `public/images/products/` or full image URLs, so images can be swapped from the database.
+- Waitlist submissions are validated with the shared zod schema in `src/lib/waitlist.schema.ts` on both client and server, then inserted via a server function using the publishable key (anon insert-only RLS plus DB check constraints).
+- The site is one scrolling page (sections anchored by id) because the brief asks for smooth-scroll navigation to the waitlist.
