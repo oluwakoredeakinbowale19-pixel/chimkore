@@ -49,6 +49,9 @@
   --color-ring-offset-background: var(--background);
   --color-cream: var(--cream);
   --color-sand: var(--sand);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-charcoal: var(--charcoal);
   --color-on-brand: var(--on-brand);
   --color-on-brand-muted: var(--on-brand-muted);
   --color-field-on-brand: var(--field-on-brand);
@@ -84,6 +87,11 @@
   /* Warm neutrals */
   --cream: oklch(0.972 0.011 76.6); /* #FAF5EE */
   --sand: oklch(0.941 0.017 70.5); /* #F3EAE0 */
+
+  /* Accents: antique gold + charcoal (How It Works strip) */
+  --gold: oklch(0.66 0.12 78);
+  --gold-deep: oklch(0.5 0.1 74);
+  --charcoal: oklch(0.34 0.012 60);
 
   --background: var(--cream);
   --foreground: oklch(0.27 0.06 45);
