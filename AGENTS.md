@@ -32,6 +32,6 @@ use the editor.
 ## Project rules
 
 - Product catalog is read from the `products` table (only `is_active = true`, ordered by `display_order`) via a public server function; toggling rows in the database changes the site without code edits.
-- Product `image_url` values point to files in `public/images/products/` or full image URLs, so images can be swapped from the database.
+- Product photos live in the `images` text[] column (first entry = cover); entries are Lovable asset URLs, `public/` paths or full URLs, so photos can be swapped from the database. `image_url` is deprecated and only a fallback.
 - Waitlist submissions are validated with the shared zod schema in `src/lib/waitlist.schema.ts` on both client and server, then inserted via a server function using the publishable key (anon insert-only RLS plus DB check constraints).
 - The site is one scrolling page (sections anchored by id) because the brief asks for smooth-scroll navigation to the waitlist.

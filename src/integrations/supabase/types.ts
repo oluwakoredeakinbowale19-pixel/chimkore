@@ -22,6 +22,7 @@ export type Database = {
           display_order: number
           id: string
           image_url: string | null
+          images: string[]
           is_active: boolean
           name: string
         }
@@ -32,6 +33,7 @@ export type Database = {
           display_order?: number
           id?: string
           image_url?: string | null
+          images?: string[]
           is_active?: boolean
           name: string
         }
@@ -42,6 +44,7 @@ export type Database = {
           display_order?: number
           id?: string
           image_url?: string | null
+          images?: string[]
           is_active?: boolean
           name?: string
         }

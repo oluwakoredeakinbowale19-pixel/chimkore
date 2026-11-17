@@ -15,8 +15,7 @@ export function Footer() {
       <div className="container-site grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <img src={logo.url} alt={`${BRAND_NAME} — ${TAGLINE}`} className="h-14 w-auto" loading="lazy" />
-          <p className="font-display mt-4 text-2xl text-primary">{TAGLINE}</p>
-          <p className="mt-2 max-w-xs text-sm text-muted-foreground">
+          <p className="mt-4 max-w-xs text-sm text-muted-foreground">
             Contemporary treats &amp; confectionery. Lagos, Nigeria.
           </p>
         </div>

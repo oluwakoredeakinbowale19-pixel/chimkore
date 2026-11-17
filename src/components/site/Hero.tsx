@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-puff-puff.jpg";
+import heroImage from "@/assets/products/chocolate-chunks.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
@@ -35,16 +35,16 @@ export function Hero() {
           <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-sand md:-inset-6" aria-hidden="true" />
           <div className="overflow-hidden rounded-[2rem] shadow-lift">
             <img
-              src={heroImage}
-              alt="An assortment of glazed puff-puff topped with Oreo crumbs, coconut flakes and chocolate chips"
-              width={1536}
-              height={1152}
+              src={heroImage.url}
+              alt="Close-up of CHiMKORÈ Chocolate Loaded Puff-Puff with rich chocolate glaze and chocolate chunks"
+              width={720}
+              height={1280}
               className="aspect-[4/3] h-full w-full object-cover transition-transform duration-[1.2s] hover:scale-[1.03]"
             />
           </div>
           <div className="animate-float absolute -bottom-6 left-4 rounded-2xl bg-card px-5 py-4 shadow-lift md:-left-8">
             <p className="font-display text-xl text-primary">Oops! too good</p>
-            <p className="text-xs text-muted-foreground">Signature glazed puff-puff</p>
+            <p className="text-xs text-muted-foreground">Chocolate loaded puff-puff</p>
           </div>
         </div>
       </div>
