@@ -1,0 +1,11 @@
+[build]
+  command = "bun run build"
+  # Vite + Nitro (netlify preset) writes the static client assets to dist/
+  publish = "dist"
+
+# The Supabase URL, project ID and publishable (anon) key are public by design:
+# they are embedded in the browser bundle and protected by row-level security.
+# Secret keys (e.g. SUPABASE_SERVICE_ROLE_KEY) are intentionally NOT listed and
+# remain covered by Netlify's secrets scanning.
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "SUPABASE_URL,SUPABASE_PROJECT_ID,SUPABASE_PUBLISHABLE_KEY,VITE_SUPABASE_URL,VITE_SUPABASE_PROJECT_ID,VITE_SUPABASE_PUBLISHABLE_KEY"
