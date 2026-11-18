@@ -1,7 +1,6 @@
 import { createStart, createCsrfMiddleware, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";
-import { attachSupabaseAuth } from "@/integrations/supabase/auth-attacher";
 
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
@@ -27,11 +26,10 @@ const csrfMiddleware = createCsrfMiddleware({
 
 // requestMiddleware runs on every request; functionMiddleware only on server functions, where
 // client sendContext is unvalidated input. Append to these arrays, never replace them.
-// Enabling Lovable Cloud adds functionMiddleware: [attachSupabaseAuth], the bearer token that
-// requireSupabaseAuth server functions need. Add it by hand only if Lovable Cloud or a
-// user-managed Supabase project is connected, no middleware here sets Authorization, and the
-// project did not intentionally replace it.
+// attachSupabaseAuth is intentionally NOT registered: the site has no sign-in and no
+// requireSupabaseAuth server functions, and the browser-side middleware crashed the whole page
+// whenever the browser build lacked VITE_SUPABASE_* vars. Re-add it only when auth is introduced.
 export const startInstance = createStart(() => ({
-  functionMiddleware: [attachSupabaseAuth],
+  functionMiddleware: [],
   requestMiddleware: [errorMiddleware, csrfMiddleware],
 }));

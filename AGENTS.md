@@ -35,3 +35,4 @@ use the editor.
 - Product photos live in the `images` text[] column (first entry = cover); entries are Lovable asset URLs, `public/` paths or full URLs, so photos can be swapped from the database. `image_url` is deprecated and only a fallback.
 - Waitlist submissions are validated with the shared zod schema in `src/lib/waitlist.schema.ts` on both client and server, then inserted via a server function using the publishable key (anon insert-only RLS plus DB check constraints).
 - The site is one scrolling page (sections anchored by id) because the brief asks for smooth-scroll navigation to the waitlist.
+- Do not register `attachSupabaseAuth` in `src/start.ts` while the site has no sign-in — its browser-side session lookup blanked the page when the browser build lacked backend env vars.
